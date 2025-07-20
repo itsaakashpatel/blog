@@ -40,3 +40,8 @@ pnpm dev
 ```
 
 Deploy it to the cloud with [Vercel](https://vercel.com/templates) ([Documentation](https://nextjs.org/docs/app/building-your-application/deploying)).
+
+## Author
+
+- **Name:** Aakash Patel
+- **Email:** aakash@example.com
