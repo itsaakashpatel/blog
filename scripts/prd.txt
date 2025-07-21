@@ -1,0 +1,219 @@
+# Overview  
+This project migrates a personal blog from Eleventy to Next.js using the Vercel Portfolio Starter Kit template. The migration addresses the need for a modern, maintainable blog platform while preserving all existing content, navigation structure, and SEO performance. The target solution leverages Next.js's superior developer experience, built-in performance optimizations, and the polished design system of the Portfolio Starter Kit template. This migration serves bloggers who want to modernize their tech stack without losing their existing content investment or compromising on performance.
+
+# References:
+- Existing project:  /Users/ak/Workspace/Projects/aakash-patel
+- New Project in next js: Current dir
+
+# Core Features  
+
+## Content Management System
+- **What it does**: Processes and renders MDX blog posts with frontmatter metadata, supporting tags, categories, and custom taxonomies
+- **Why it's important**: Preserves the existing content structure and authoring workflow while enabling rich interactive content through MDX
+- **How it works**: Next.js App Router dynamically generates static pages from MDX files, parsing frontmatter for metadata and rendering content through React components
+
+## Navigation & Site Structure  
+- **What it does**: Maintains existing menu structure, footer links, and page hierarchy from the original Eleventy blog
+- **Why it's important**: Preserves user experience and SEO value of established navigation patterns
+- **How it works**: React components render navigation menus dynamically based on content structure, with responsive design matching the Portfolio Starter Kit template
+
+## Taxonomy System
+- **What it does**: Organizes content by tags and categories with dedicated listing pages and filtering capabilities
+- **Why it's important**: Enables content discovery and maintains existing content organization structure
+- **How it works**: Dynamic routes generate tag and category pages, with components that filter and display related posts
+
+## SEO & Performance Optimization
+- **What it does**: Generates proper meta tags, structured data, sitemaps, and RSS feeds while maintaining fast loading times
+- **Why it's important**: Critical for maintaining search rankings and user experience during migration
+- **How it works**: Next.js metadata API handles SEO tags, while static generation ensures optimal performance scores
+
+## Shortcode Conversion System - Check if it's required to implement
+- **What it does**: Converts Eleventy-specific shortcodes into React components for seamless content rendering
+- **Why it's important**: Ensures existing content renders correctly without manual editing of every post
+- **How it works**: Custom MDX components replace shortcode functionality, maintaining visual and functional parity
+
+# User Experience  
+
+## User Personas
+**Primary User: Blog Reader**
+- Expects fast, responsive experience across devices
+- Values clean, readable content presentation
+- Accesses content through search, direct links, or browsing
+
+**Secondary User: Content Author (You)**
+- Needs efficient content creation workflow
+- Requires easy deployment and maintenance
+- Values modern development experience
+
+## Key User Flows
+**Content Discovery Flow:**
+1. User lands on homepage or post listing
+2. Browses posts by date, tags, or categories  
+3. Clicks through to individual post
+4. Navigates to related content via tags/categories
+
+**Content Consumption Flow:**
+1. User reads blog post with optimal typography
+2. Interacts with any embedded components (former shortcodes)
+3. Shares content via social links
+4. Subscribes to RSS feed if interested
+
+## UI/UX Considerations
+- Responsive design that works seamlessly on mobile and desktop
+- Dark/light mode toggle from Portfolio Starter Kit template
+- Clean typography optimized for reading
+- Fast page transitions and loading
+- Accessible navigation and content structure
+
+# Technical Architecture  
+
+## System Components
+**Frontend Layer:**
+- Respect current directory package.json packages versions
+
+**Content Layer:**
+- MDX files for blog posts
+- File-system based routing for automatic page generation
+- Static site generation (SSG) for optimal performance
+
+**Data Processing:**
+- Custom content parsing
+- Taxonomy extraction and organization from post metadata
+- RSS feed generation from post data
+
+## Data Models
+```typescript
+interface BlogPost {
+  slug: string;
+  title: string;
+  date: string;
+  tags: string[];
+  categories: string[];
+  description: string;
+  content: string;
+  // Additional frontmatter fields
+}
+
+interface Navigation {
+  label: string;
+  href: string;
+  children?: Navigation[];
+}
+```
+
+## APIs and Integrations
+- No external APIs required - fully static site generation
+- RSS feed endpoint for syndication
+- Sitemap generation for search engines
+
+## Infrastructure Requirements
+- Node.js runtime environment
+- Static hosting (Vercel, Netlify, or similar)
+- Build process for MDX compilation and optimization
+
+# Development Roadmap  
+
+## Phase 1: Foundation & Setup
+**Scope**: Basic Next.js setup with minimal viable blog functionality
+- Clone and configure Portfolio Starter Kit template
+- Set up MDX processing pipeline for blog posts
+- Create basic post listing and individual post pages
+- Implement core navigation structure
+- Basic responsive layout with Tailwind CSS
+
+## Phase 2: Content Migration & Enhancement
+**Scope**: Complete content migration with full feature parity
+- Migrate all existing blog posts
+- Implement tag and category taxonomy system with dedicated pages
+- Convert critical Eleventy shortcodes to React components if any
+- Implement search functionality 
+
+## Phase 3: Polish & Advanced Features
+**Scope**: Final touches and quality assurance
+- Dark/light mode implementation matching template design
+- Performance tuning to achieve 90+ Lighthouse scores
+- Content validation and link checking
+- Deployment pipeline and monitoring setup
+
+# Logical Dependency Chain
+
+## Foundation First (Immediate Visibility)
+1. **Template Setup**: Portfolio Starter Kit provides immediate visual framework
+2. **Basic MDX Pipeline**: Enables viewing converted blog posts quickly
+3. **Core Routing**: `/blog/[slug]` and `/blog` pages for basic functionality
+4. **Navigation Component**: Ensures site structure is immediately usable
+
+## Content Processing (Building Upon Foundation)
+1. **Frontmatter Parser**: Required before any content migration can occur
+2. **Post Listing Logic**: Depends on frontmatter parsing, enables homepage and blog index
+3. **Individual Post Rendering**: Depends on MDX pipeline, provides full content access
+4. **Asset Migration**: Can proceed in parallel once file structure is established
+
+## Feature Enhancement (Atomic Improvements)
+1. **Taxonomy System**: Can be built incrementally (tags first, then categories)
+4. **SEO Metadata**: Can be implemented page-by-page as components are finalized
+
+## Optimization Layer (Final Polish)
+1. **Performance Tuning**: Requires complete feature set to optimize effectively
+2. **Cross-browser Testing**: Needs full functionality to test comprehensively
+3. **Production Deployment**: Final step requiring all systems to be stable
+
+# Risks and Mitigations  
+
+## Technical Challenges
+**Risk**: Complex Eleventy shortcodes may not translate directly to React components
+**Mitigation**: Early audit of existing shortcodes, prototype most complex ones first, create fallback strategies for edge cases
+
+**Risk**: SEO rankings could be impacted during migration
+**Mitigation**: Maintain URL structure where possible, implement proper redirects, monitor search performance closely post-launch
+
+**Risk**: Performance regression compared to highly optimized Eleventy build
+**Mitigation**: Leverage Next.js built-in optimizations, implement proper image optimization, use static generation for all content
+
+## MVP Definition and Scope
+**Risk**: Feature creep could delay launch of usable version
+**Mitigation**: Define strict MVP as "all existing content accessible and readable" - advanced features are post-MVP enhancements
+
+**Risk**: Overengineering the migration process
+**Mitigation**: Start with manual content conversion if automated scripts become complex, focus on getting working site first
+
+## Resource and Complexity Constraints
+**Risk**: Underestimating shortcode conversion complexity
+**Mitigation**: Audit existing shortcodes early, prioritize most commonly used ones, consider simplified alternatives for complex cases
+
+**Risk**: Content structure incompatibilities between platforms
+**Mitigation**: Create comprehensive content audit, build flexible parsing system that can handle edge cases gracefully
+
+# Appendix  
+
+## Research Findings
+**Eleventy Base Blog Analysis:**
+- Uses Nunjucks templating with custom filters for date formatting, URL generation
+- Implements RSS feed via template generation
+- Custom CSS with minimal JavaScript
+- Performance optimized with 400+ Lighthouse score baseline
+
+**Portfolio Starter Kit Analysis:**
+- Modern Next.js 15 with App Router architecture
+- Tailwind CSS with custom component system
+- Built-in dark mode toggle and responsive design
+- TypeScript support throughout
+- Optimized for performance and SEO
+
+## Technical Specifications
+**Content Migration Requirements:**
+- Preserve all frontmatter fields (title, date, description, tags, categories)
+- Maintain existing URL structure: `/posts/[slug]` format
+- Support for existing image references and asset links
+- Convert any custom Eleventy filters used in content
+
+**Performance Targets:**
+- Lighthouse Performance Score: 90+
+- First Contentful Paint: < 1.5s
+- Largest Contentful Paint: < 2.5s
+- Cumulative Layout Shift: < 0.1
+
+**Browser Support:**
+- Modern evergreen browsers (Chrome, Firefox, Safari, Edge)
+- Mobile responsive design for iOS and Android devices
+- Progressive enhancement for older browsers
