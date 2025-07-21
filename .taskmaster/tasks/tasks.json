@@ -1,0 +1,203 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Setup Next.js Project with Portfolio Starter Kit Template",
+        "description": "Initialize the Next.js project using the Vercel Portfolio Starter Kit template and configure the development environment",
+        "details": "1. Clone or initialize from Portfolio Starter Kit template\n2. Install dependencies respecting current directory package.json versions\n3. Configure TypeScript and Tailwind CSS\n4. Set up basic project structure with /app directory for App Router\n5. Configure next.config.js for MDX support\n6. Set up development scripts and environment variables\n7. Initialize git repository and create initial commit",
+        "testStrategy": "Verify project starts successfully with `npm run dev`, check that all dependencies install without conflicts, ensure TypeScript compilation works, and confirm Tailwind CSS is properly configured",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Initialize Next.js Project from Portfolio Starter Kit Template",
+            "description": "Clone or create a new Next.js project using the Vercel Portfolio Starter Kit template as the foundation",
+            "dependencies": [],
+            "details": "Use 'npx create-next-app@latest' with the Portfolio Starter Kit template or clone the repository. Ensure the project is initialized with TypeScript, Tailwind CSS, and App Router configuration. Verify the basic project structure matches the Portfolio Starter Kit layout.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Install and Manage Project Dependencies",
+            "description": "Install all required dependencies while respecting existing package.json versions and resolving any conflicts",
+            "dependencies": [],
+            "details": "Run npm install to install base dependencies. Add additional packages needed for MDX processing, content management, and any missing utilities. Check for version conflicts and update package.json accordingly. Verify all dependencies install cleanly without warnings.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Configure TypeScript and Type Definitions",
+            "description": "Set up TypeScript configuration and create necessary type definitions for the blog system",
+            "dependencies": [],
+            "details": "Verify tsconfig.json is properly configured for Next.js App Router. Create type definitions for blog posts, frontmatter metadata, and other custom interfaces. Ensure TypeScript compilation works without errors and strict mode is enabled.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Configure Tailwind CSS and Styling System",
+            "description": "Set up Tailwind CSS configuration to match Portfolio Starter Kit design system",
+            "dependencies": [],
+            "details": "Verify tailwind.config.js includes proper content paths and theme configuration. Ensure CSS imports are correctly set up in the root layout. Test that Tailwind classes are working and the design system is properly integrated.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Configure Next.js Settings and MDX Support",
+            "description": "Set up next.config.js with proper configuration for MDX processing and other project requirements",
+            "dependencies": [],
+            "details": "Configure next.config.js to support MDX compilation, set up proper webpack configurations if needed, and ensure experimental features like App Router are properly enabled. Add any necessary plugins for content processing.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 6,
+            "title": "Set Up Development Scripts and Environment Variables",
+            "description": "Configure package.json scripts and environment variables for development workflow",
+            "dependencies": [],
+            "details": "Verify development scripts (dev, build, start, lint) are properly configured in package.json. Set up environment variables for development and production. Create .env.local template and document required environment variables.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 7,
+            "title": "Initialize Git Repository and Create Initial Commit",
+            "description": "Set up version control and create the initial project commit with proper gitignore configuration",
+            "dependencies": [],
+            "details": "Initialize git repository if not already done. Verify .gitignore includes all necessary exclusions (node_modules, .next, .env.local, etc.). Create initial commit with the complete project setup. Verify the project starts successfully with 'npm run dev'.",
+            "status": "done",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Configure MDX Processing Pipeline",
+        "description": "Set up MDX compilation and processing system to handle blog posts with frontmatter metadata",
+        "details": "1. Install and configure @next/mdx and related packages\n2. Create MDX components provider for custom component mapping\n3. Set up frontmatter parsing using gray-matter or similar\n4. Configure MDX compilation in next.config.js\n5. Create utility functions for reading and parsing MDX files\n6. Set up content directory structure (/content/posts/)\n7. Create TypeScript interfaces for BlogPost data model",
+        "testStrategy": "Create sample MDX files with frontmatter, verify they compile correctly, test frontmatter parsing returns expected metadata, and ensure MDX content renders as React components",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 3,
+        "title": "Implement Core Blog Routing and Pages",
+        "description": "Create the fundamental blog pages including post listing, individual post pages, and basic navigation structure",
+        "details": "1. Create /app/blog/page.tsx for blog post listing\n2. Implement /app/blog/[slug]/page.tsx for individual posts\n3. Create utility functions to fetch all posts and get post by slug\n4. Implement static generation with generateStaticParams\n5. Create basic post listing component with date sorting\n6. Set up individual post layout with title, date, and content\n7. Implement basic navigation component matching existing structure",
+        "testStrategy": "Verify blog listing page displays all posts correctly, test individual post pages render with proper content and metadata, ensure static generation works for all posts, and validate navigation links function properly",
+        "priority": "high",
+        "dependencies": [
+          2
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 4,
+        "title": "Migrate Existing Blog Content",
+        "description": "Transfer all blog posts from the existing Eleventy project to the new Next.js structure",
+        "details": "1. Audit existing blog posts in /Users/ak/Workspace/Projects/aakash-patel\n2. Create migration script to copy posts to /content/posts/\n3. Convert any Eleventy-specific frontmatter to standard format\n4. Preserve existing URL structure with /posts/[slug] format\n5. Migrate associated assets (images, files) to /public directory\n6. Update internal links and asset references in posts\n7. Validate all posts have required frontmatter fields",
+        "testStrategy": "Verify all existing posts are successfully migrated, check that frontmatter parsing works for all posts, ensure asset links resolve correctly, and validate that URL structure matches original site",
+        "priority": "high",
+        "dependencies": [
+          3
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 5,
+        "title": "Implement Taxonomy System (Tags and Categories)",
+        "description": "Create tag and category pages with filtering and organization capabilities",
+        "details": "1. Create /app/blog/tags/[tag]/page.tsx for tag-specific post listings\n2. Create /app/blog/categories/[category]/page.tsx for category listings\n3. Implement utility functions to extract unique tags and categories\n4. Create tag and category listing components\n5. Add generateStaticParams for all tag and category pages\n6. Implement filtering logic to show posts by taxonomy\n7. Add tag/category links to individual post pages\n8. Create taxonomy overview pages showing all tags/categories",
+        "testStrategy": "Verify tag pages display correct filtered posts, test category pages show appropriate content, ensure all taxonomy pages generate statically, and validate links between posts and taxonomy pages work correctly",
+        "priority": "medium",
+        "dependencies": [
+          4
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 6,
+        "title": "Implement SEO and Metadata System",
+        "description": "Set up comprehensive SEO optimization including meta tags, structured data, and sitemaps",
+        "details": "1. Implement Next.js metadata API for all pages\n2. Create dynamic metadata generation for blog posts using frontmatter\n3. Set up Open Graph and Twitter Card meta tags\n4. Implement JSON-LD structured data for blog posts\n5. Create sitemap.xml generation using Next.js sitemap API\n6. Set up robots.txt configuration\n7. Implement canonical URLs and proper meta descriptions\n8. Add schema.org markup for blog content",
+        "testStrategy": "Validate meta tags are correctly generated for all pages, test Open Graph preview in social media validators, verify sitemap.xml contains all pages, and check structured data using Google's Rich Results Test",
+        "priority": "medium",
+        "dependencies": [
+          5
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 7,
+        "title": "Create RSS Feed Generation",
+        "description": "Implement RSS feed endpoint for blog syndication",
+        "details": "1. Create /app/feed.xml/route.ts API route for RSS generation\n2. Implement RSS XML generation using all blog posts\n3. Include proper RSS metadata (title, description, link, pubDate)\n4. Sort posts by date in descending order\n5. Include full post content or excerpts in RSS items\n6. Set proper Content-Type headers for XML response\n7. Add RSS feed link to site header/meta tags",
+        "testStrategy": "Verify RSS feed generates valid XML, test feed in RSS readers, ensure all posts appear with correct metadata, and validate feed validates against RSS specification",
+        "priority": "medium",
+        "dependencies": [
+          4
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 8,
+        "title": "Implement Responsive Design and Dark Mode",
+        "description": "Apply Portfolio Starter Kit design system with responsive layout and dark/light mode toggle",
+        "details": "1. Implement dark/light mode toggle using next-themes\n2. Apply Portfolio Starter Kit color scheme and typography\n3. Ensure responsive design works across mobile and desktop\n4. Style blog post content with proper typography classes\n5. Implement responsive navigation menu\n6. Add proper spacing and layout for blog listing and individual posts\n7. Ensure accessibility standards are met (WCAG 2.1)\n8. Test cross-browser compatibility",
+        "testStrategy": "Test responsive design on various screen sizes, verify dark/light mode toggle works correctly, validate accessibility with screen readers, and ensure consistent styling across all browsers",
+        "priority": "medium",
+        "dependencies": [
+          3
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 9,
+        "title": "Performance Optimization and Image Handling",
+        "description": "Optimize site performance to achieve 90+ Lighthouse scores with proper image optimization",
+        "details": "1. Implement Next.js Image component for all blog images\n2. Set up image optimization in next.config.js\n3. Implement lazy loading for blog post listings\n4. Optimize bundle size by analyzing and splitting code\n5. Set up proper caching headers for static assets\n6. Implement preloading for critical resources\n7. Optimize fonts and CSS delivery\n8. Run Lighthouse audits and address performance issues",
+        "testStrategy": "Run Lighthouse audits to achieve 90+ performance score, test image loading and optimization, verify lazy loading works correctly, and measure Core Web Vitals metrics",
+        "priority": "medium",
+        "dependencies": [
+          8
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 10,
+        "title": "Production Deployment and Final Testing",
+        "description": "Deploy the migrated blog to production and perform comprehensive testing",
+        "details": "1. Configure production build settings and environment variables\n2. Set up deployment pipeline (Vercel recommended)\n3. Configure custom domain and SSL certificates\n4. Implement proper redirects from old URLs if needed\n5. Set up monitoring and analytics\n6. Perform comprehensive cross-browser testing\n7. Validate all links and ensure no broken references\n8. Test performance in production environment\n9. Create backup and rollback procedures",
+        "testStrategy": "Verify production deployment works correctly, test all functionality in production environment, validate SSL certificates and domain configuration, and ensure monitoring systems are operational",
+        "priority": "low",
+        "dependencies": [
+          9
+        ],
+        "status": "pending",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "created": "2025-07-21T06:11:43.037Z",
+      "updated": "2025-07-21T06:31:55.950Z",
+      "description": "Tasks for master context"
+    }
+  }
+}
