@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
 import { formatDate, getBlogPosts } from 'app/blog/utils'
 import { baseUrl } from 'app/sitemap'
+import { CategoryBadge } from 'app/components/category-badge'
 
 export async function generateStaticParams() {
   let posts = getBlogPosts()
@@ -90,6 +91,14 @@ export default async function Blog(props) {
       <div className="flex justify-between items-center mt-2 mb-8 text-sm">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
           {formatDate(post.metadata.publishedAt)}
+          {post.metadata.category && (
+            <>
+              {' '}
+              in
+              {' '}
+              <CategoryBadge category={post.metadata.category} />
+            </>
+          )}
         </p>
       </div>
       <article className="prose">

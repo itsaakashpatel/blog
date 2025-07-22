@@ -1,12 +1,21 @@
 import Link from 'next/link'
 import { formatDate, getBlogPosts } from 'app/blog/utils'
 
-export function BlogPosts() {
-  let allBlogs = getBlogPosts()
+interface BlogPost {
+  slug: string
+  metadata: {
+    title: string
+    publishedAt: string
+    category?: string
+  }
+}
+
+export function BlogPosts({ posts }: { posts?: BlogPost[] }) {
+  let postsToDisplay = posts || getBlogPosts();
 
   return (
     <div>
-      {allBlogs
+      {postsToDisplay
         .sort((a, b) => {
           if (
             new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)

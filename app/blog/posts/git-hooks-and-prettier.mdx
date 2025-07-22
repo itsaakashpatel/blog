@@ -1,0 +1,130 @@
+---
+title: 'Git Hooks and Prettier: Your Code & Best Friends'
+publishedAt: 2023-11-27T06:57:02.000Z
+summary: 'Learn how to use Git hooks and Prettier to maintain code quality and consistency in your projects. Set up automatic formatting before commits.'
+---
+When you are working in a team, you need to maintain the quality of the code. It should be easy to read and formatting should be neat and clean. Right?
+
+It holds significant practical value and it’s essential because of readability, consistency, smooth collaboration, debugging, and maintainability.
+
+Properly formatted code helps developers to easily read and understand the flow of the code.
+
+In this article, I’m going to show you how to format your code using prettier and git hooks before you commit.
+
+## What is prettier?
+
+[Prettier](https://prettier.io/) is an opinionated code formatter that enforces a consistent code style in your project. It analyzes your code and automatically adjusts the formatting to match your predefined rules.
+
+it’s available for most IDEs and you can also add it as an npm or yarn package.
+
+## What is husky?
+
+[Husky](https://typicode.github.io/husky/) is a tool that manages Git hooks in your repository, ensuring that specific scripts or actions run at various stages of the Git lifecycle, such as pre-commit or pre-push.
+
+## How to set up prettier and husky for the project?
+
+You can set up Git hooks to run Prettier before each commit to ensure that the code adheres to your formatting standards. To do this, you can use a combination of Git hooks and Husky. Here are the steps to set up Git hooks for Prettier:
+
+### #1: Install Prettier and Husky:
+
+First, make sure you have Prettier and Husky installed as development dependencies in your project:
+
+```js 
+npm install --save-dev prettier husky
+```
+
+### #2: Create a Prettier Configuration File:
+
+Create a `.prettierrc` or `.prettierrc.json` file in the root of your project. Something like this:
+
+```js
+{
+  "printWidth": 100,
+  "singleQuote": true,
+  "bracketSpacing": false
+}
+```
+
+### #3: Define the script command in the `package.json` file.
+
+Here, I have defined format and lint commands. You can use npm run format to beautify your code according to defined rules.
+
+```js
+"scripts": {
+    "format": "prettier --write .",
+    "lint": "prettier --check ."
+  },
+```
+
+### #4: Use husky and git hooks to check the formatting of code before committing to GitHub.
+
+There are many git hooks available you can [check them](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) here. Here, I’m using the `pre-commit` rule which will run before each commit.
+
+In your `package.json` file.
+
+```js
+"husky": {
+  "hooks": {
+    "pre-commit": "npm run format && git add -A ."
+  }
+}
+```
+
+Your final `package.json` file should look something similar to this:
+
+```js
+{
+  "name": "quote-flora",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "format": "prettier --write .",
+    "lint": "prettier --check ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format && git add -A ."
+    }
+  },
+  "dependencies": {
+    "@react-navigation/bottom-tabs": "^6.5.11",
+    "@react-navigation/native": "^6.1.9",
+    "@react-navigation/native-stack": "^6.9.16",
+    "@react-navigation/stack": "^6.3.20",
+    "expo": "^49.0.16",
+    "expo-notifications": "~0.20.1",
+    "expo-permissions": "^14.4.0",
+    "expo-status-bar": "~1.6.0",
+    "material-icons": "^1.13.12",
+    "react": "^18.2.0",
+    "react-native": "^0.72.6",
+    "react-native-paper": "^5.11.0",
+    "react-native-reanimated": "^3.5.4",
+    "react-native-segmented-control-tab": "^4.0.0",
+    "react-native-tab-view": "^3.5.2",
+    "react-native-vector-icons": "^10.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "husky": "^8.0.3",
+    "prettier": "^3.0.3"
+  },
+  "private": true
+}
+```
+
+That’s it. Now every time you commit your code it will run npm run format to format the code and then it will be committed.
+
+## Few things to keep in mind:
+
+1: Ensure that you have initialized Git in your project and that you are working within a Git repository. If you’re not in a Git repository, Husky won’t work.
+
+2: Ensure that you have staged the files you intend to commit. Husky and lint-staged will only run Prettier on files that are already staged with `git add .`.
+
+3: If Husky or lint-staged are running but not applying Prettier, check the output in your terminal when you attempt to make a commit. Any error messages or warnings might provide clues about what’s going wrong.
+
+Thanks!
