@@ -1,0 +1,147 @@
+---
+title: Micro Frontend - Extending the Microservice Idea to Frontend Development
+publishedAt: 2024-01-03T09:47:03.000Z
+summary: A comprehensive guide to understanding micro frontends, their benefits, challenges, and best practices in React development.
+category: microfrontend
+---
+
+Do you know about microservices? If your answer is yes, then this guide will help you give more context about leveraging the microservices concept in the UI world.
+
+But if you don’t know about microservices then don’t worry, I will start explaining that first.
+
+Microservices, also known as microservices architecture, is an architectural style that structures an application as a collection of small autonomous services, modeled around a business domain.
+
+Each service is self-contained and should be able to run independently of the others. This approach allows for individual components to be developed, deployed, scaled, and updated separately, making it easier to manage and allowing for more rapid and reliable software delivery. It’s widely used in cloud-native applications and large-scale, complex systems.
+
+The same concept is also applied to UI components, the micro frontends with React, the architectural style where you break down your UI into bite-sized, manageable pieces.
+
+## **What is a micro frontend?**
+
+In the tech world, a **micro frontend** is a development approach where a frontend app is decomposed into individual, semi-independent “micro” apps. They work cohesively to deliver a seamless user experience, much like a well-oiled machine where every part has a role.
+
+Think of it as a Lego set – snap together different blocks, or components, to build something greater. Each block can be developed, tested, and deployed independently, without having to rebuild the entire set.
+
+The beauty of micro frontends?
+
+You’re not locked into a single framework for your entire application. Instead, you can mix and match based on what best suits the needs of each part of your app.
+
+If one team works wonders with [React](https://aakashpatel.in/categories/react-js/) but another is more comfortable with Vue, they can each use their preferred tools within the same project.
+
+This approach offers a solution to a common problem: **the dreaded frontend monolith**. _As applications grow, the codebase often becomes unwieldy, slowing down development and making updates a high-stake game of Jenga where one wrong move could topple everything._
+
+With [micro](https://en.wikipedia.org/wiki/Microfrontend) [frontends](https://en.wikipedia.org/wiki/Microfrontend), updates become more manageable, and teams can work in parallel, increasing agility and enabling faster feature deployment.
+
+**Scaling** is another perk of going micro. As demand grows, you can scale up sections of your app without having to scale the whole thing. This tailored scaling is not just efficient, it’s cost-effective.
+
+## **Why Microservices in the Frontend is important?**
+
+By breaking down the front-end project, I’ve seen firsthand how **autonomy** boosts productivity. Teams can work on separate parts of the app, leading to **parallel development streams** and reducing bottlenecks.
+
+**Here’s what stands out:**
+
+### **Pros:**
+
+- **Scalability:** Just like Lego blocks, micro frontends stack together neatly. They help the app grow organically while keeping things manageable.
+- **Technology Agnostic:** Fancy a shake-up in your tech stack? Micro frontends don’t chain you to one framework or library.
+- **Deployment Versatility:** Need to roll out an update? It’s isolated to one micro front end, making it swift and minimizing risks.
+
+Adapting to user feedback becomes a cinch too. Plus, with isolated components, one bug won’t take down the castle. Each micro frontend is different on its own.
+
+### **Cons:**
+
+- **Complex Setup:** Initially, developing independent units takes effort and a knack for architectural design.
+- **Overhead Investment:** More pipelines, more repositories – there are extra pieces in the operational puzzle.
+- **Potential Performance Hits:** If not managed well, the aggregated load of separate micro frontends could impact the user’s experience.
+
+Understanding how to balance these out is where the magic happens. Stay tuned for a deep dive into how to mitigate these challenges in upcoming articles.
+
+## **Examples**:
+
+### **Monolith Application**
+
+![Monolith Ecommerce store](/images/Monolith-Ecommerce-store-o2hlwMOFCGXI.png)
+
+This is an example of the monolith architecture of an e-commerce store where frontend, backend, and databases are being managed separately. It has a single team to maintain the application.
+
+![Backend and frontend team architecture](/images/Backend-and-frontend-team-TpU9rMS66H8A.png)
+
+Here, the front-end team only manages the UI components and interacts with the back-end team to maintain the applications. When it comes to the backend team, they also manage Database stuff along with the backend.
+
+This type of architecture is ideal for small to medium-level applications where a minimum amount of communication and collaboration is needed.
+
+### **Frontend and Backend with Microservices architecture**
+
+![Microservices at backend](/images/Microservices-at-backend-c7yj3G2O1H3A.png)
+
+This is an example of an e-commerce store that has a frontend, API gateway, and a backend with microservice architecture.
+
+If you notice, at the backend side, each module has been divided by business logic and it serves a unique purpose in the entire application.
+
+But, there is only one frontend that is being managed by a single frontend team while the backend team has been divided into multiple small team members.
+
+That means less dependency, more scalability, and less headache at the backend side. But still, problems arise when trying to integrate into a monolithic frontend, which is a bottleneck of the application.
+
+This type of application setup can be useful for small to medium-level application development.
+
+### **Micro frontends Application**
+
+![Ecommerce store with microfrontends](/images/Ecommerce-store-with-microfron-g2N5Aih17B45.png)
+
+Now, the last but not least, less complex architecture and easy to maintain – Microfrontends architecture.
+
+Here each module has been divided into a small independent function, and each one is implemented simultaneously, from the frontend to the backend.
+
+That means each team is solely responsible for their work in the frontend, backend, and database and all communicate with the API gateway layer.
+
+This gives scalability, adaptability, and flexibility to create and maintain the application. Moreover, this is technology-dependent and can be developed with different frameworks according to product requirements.
+
+## **When to use microfrontends?**
+
+Micro frontends prove ideal for extensive applications with multiple functionalities. When anticipating potential scalability issues in a project, opting for the micro frontend architecture is advisable.
+
+A strategic approach involves dissecting the application into distinct sets of functions and screens, mirroring the organizational structure of a cell phone. Much like a mobile device hosts separate applications for various purposes—such as a dialer for calls, a contacts app for storing numbers, and a messaging app for texts—each serves a unique function while maintaining seamless interaction.
+
+Despite the interconnectedness of these applications, each one is designed for a specific purpose, justifying their implementation as independent entities.
+
+## **Best Practices and Tips:**
+
+- Define a clear purpose for each micro frontend
+- Communication
+- Find the right size for each one, and stick to it.
+- Define workflow organization
+- Define consistent styling and design guidelines
+- Track dependencies
+- Publish libraries
+
+To sum it up, micro frontends offer a way to break down the complexity of modern web applications. They provide a flexible architecture that can grow with your team and your user base, one small, independent piece at a time.
+
+## _**Frequently Asked Questions**_
+
+### **What is micro frontend with React?**
+
+Micro Frontends with React is a design approach that allows developers to build scalable and maintainable applications. It involves dividing a large frontend application into smaller, independent pieces that can be developed, tested, and deployed separately.
+
+### **Who uses Microfrontend?**
+
+Micro frontends are used by organizations looking to scale their frontend architecture and improve development workflows. Notable companies embracing microfrontends include IKEA, Spotify, and Zalando.
+
+### **What is the difference between microservices and Microfrontend?**
+
+Microservices refer to the backend decomposition of applications into small services, while Microfrontends focus on splitting the frontend into smaller, more manageable pieces. Both aim at creating scalable and maintainable systems but apply to different parts of the application.
+
+### **Is a REST API a microservice?**
+
+No, a REST API is a method of communication between services. Microservices can use REST APIs to interact with each other, but an API alone is not a microservice.
+
+### **Is a microservice just an API?**
+
+A microservice is not just an API; it’s a small, independently deployable service that is part of a larger application system. An API is an interface through which microservices can communicate with each other or with external systems.
+
+### **What are the benefits of Microfrontends in React?**
+
+Micro frontend architecture developed with React simplifies the development, integration, testing, and deployment process by dividing entire complex projects into smaller components. It allows multiple teams and developers to work individually with multiple technology stacks, frameworks, and libraries.
+
+### **When should you use micro frontends?**
+
+Your front end is becoming too big, monolithic, difficult to deploy, difficult to maintain, and too many people are working on the project.  
+Business strategy imposes a micro frontend architecture, due to how teams are organized via use cases and ownership.
