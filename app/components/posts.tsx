@@ -7,6 +7,7 @@ interface BlogPost {
     title: string;
     publishedAt: string;
     category?: string;
+    status?: string;
   };
 }
 

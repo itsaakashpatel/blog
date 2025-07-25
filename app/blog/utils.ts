@@ -7,6 +7,7 @@ type Metadata = {
   summary: string;
   image?: string;
   category?: string;
+  status?: string;
 };
 
 function parseFrontmatter(fileContent: string) {
@@ -24,6 +25,8 @@ function parseFrontmatter(fileContent: string) {
 
     if (key.trim() === 'category') {
       metadata.category = value;
+    } else if (key.trim() === 'status') {
+      metadata.status = value;
     } else {
       metadata[key.trim() as keyof Metadata] = value;
     }
@@ -73,7 +76,20 @@ function getMDXData(dir) {
 }
 
 export function getBlogPosts() {
+  const allPosts = getMDXData(path.join(process.cwd(), 'app', 'blog', 'posts'));
+  // Filter out draft posts
+  return allPosts.filter((post) => post.metadata.status !== 'draft');
+}
+
+export function getAllBlogPosts() {
+  // Get all posts including drafts (for admin/development purposes)
   return getMDXData(path.join(process.cwd(), 'app', 'blog', 'posts'));
+}
+
+export function getDraftPosts() {
+  // Get only draft posts
+  const allPosts = getMDXData(path.join(process.cwd(), 'app', 'blog', 'posts'));
+  return allPosts.filter((post) => post.metadata.status === 'draft');
 }
 
 export function getAllCategories() {
