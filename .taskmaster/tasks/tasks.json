@@ -259,7 +259,8 @@
           3
         ],
         "status": "done",
-        "subtasks": []
+        "subtasks": [],
+        "notes": "Migrated 404.md, about.md, and projects.md. Blog posts and images were already present."
       },
       {
         "id": 5,
@@ -554,7 +555,7 @@
               "8.5"
             ],
             "details": "Add proper ARIA labels, ensure keyboard navigation works for all interactive elements, implement focus management, provide sufficient color contrast ratios, and add skip links for screen readers",
-            "status": "pending",
+            "status": "done",
             "testStrategy": ""
           },
           {
@@ -566,7 +567,7 @@
               "8.6"
             ],
             "details": "Test on Chrome, Firefox, Safari, and Edge browsers, verify responsive breakpoints work correctly, ensure theme toggle functions properly across browsers, and validate CSS compatibility",
-            "status": "done",
+            "status": "pending",
             "testStrategy": ""
           },
           {
