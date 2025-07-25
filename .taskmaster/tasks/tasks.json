@@ -83,9 +83,7 @@
         "details": "1. Install and configure @next/mdx and related packages\n2. Create MDX components provider for custom component mapping\n3. Set up frontmatter parsing using gray-matter or similar\n4. Configure MDX compilation in next.config.js\n5. Create utility functions for reading and parsing MDX files\n6. Set up content directory structure (/content/posts/)\n7. Create TypeScript interfaces for BlogPost data model",
         "testStrategy": "Create sample MDX files with frontmatter, verify they compile correctly, test frontmatter parsing returns expected metadata, and ensure MDX content renders as React components",
         "priority": "high",
-        "dependencies": [
-          1
-        ],
+        "dependencies": [1],
         "status": "done",
         "subtasks": [
           {
@@ -101,9 +99,7 @@
             "id": 2,
             "title": "Configure Frontmatter Parsing System",
             "description": "Set up gray-matter or similar package to parse YAML frontmatter from MDX files",
-            "dependencies": [
-              "2.1"
-            ],
+            "dependencies": ["2.1"],
             "details": "Install gray-matter package for frontmatter parsing. Create utility functions to extract and parse frontmatter metadata from MDX files. Set up TypeScript interfaces for frontmatter data structure including title, date, tags, categories, and description fields.",
             "status": "done",
             "testStrategy": ""
@@ -112,10 +108,7 @@
             "id": 3,
             "title": "Set Up MDX Compilation Configuration",
             "description": "Configure MDX compilation settings in next.config.js with proper plugins and options",
-            "dependencies": [
-              "2.1",
-              "2.2"
-            ],
+            "dependencies": ["2.1", "2.2"],
             "details": "Configure next.config.js with MDX compilation settings. Set up MDX plugins for syntax highlighting, code blocks, and other content features. Configure compilation options for production optimization and development experience.",
             "status": "done",
             "testStrategy": ""
@@ -124,9 +117,7 @@
             "id": 4,
             "title": "Create MDX Components Provider",
             "description": "Set up MDX components provider for custom component mapping and styling",
-            "dependencies": [
-              "2.3"
-            ],
+            "dependencies": ["2.3"],
             "details": "Create MDXComponents provider to map HTML elements to custom React components. Set up custom components for headings, links, code blocks, and other MDX elements. Configure component styling to match the existing design system.",
             "status": "done",
             "testStrategy": ""
@@ -135,9 +126,7 @@
             "id": 5,
             "title": "Implement MDX File Reading Utilities",
             "description": "Create utility functions for reading, parsing, and processing MDX files from the content directory",
-            "dependencies": [
-              "2.2"
-            ],
+            "dependencies": ["2.2"],
             "details": "Create utility functions to read MDX files from /content/posts/ directory. Implement functions to parse frontmatter and compile MDX content. Set up error handling for malformed files and missing metadata.",
             "status": "done",
             "testStrategy": ""
@@ -155,9 +144,7 @@
             "id": 7,
             "title": "Create TypeScript Interfaces for Blog Data",
             "description": "Define comprehensive TypeScript interfaces for blog post data model and metadata structure",
-            "dependencies": [
-              "2.2"
-            ],
+            "dependencies": ["2.2"],
             "details": "Create TypeScript interfaces for BlogPost, BlogMetadata, and related data structures. Define types for frontmatter fields including title, date, slug, tags, categories, description, and any custom fields. Ensure type safety across the MDX processing pipeline.",
             "status": "done",
             "testStrategy": ""
@@ -171,9 +158,7 @@
         "details": "1. Create /app/blog/page.tsx for blog post listing\n2. Implement /app/blog/[slug]/page.tsx for individual posts\n3. Create utility functions to fetch all posts and get post by slug\n4. Implement static generation with generateStaticParams\n5. Create basic post listing component with date sorting\n6. Set up individual post layout with title, date, and content\n7. Implement basic navigation component matching existing structure",
         "testStrategy": "Verify blog listing page displays all posts correctly, test individual post pages render with proper content and metadata, ensure static generation works for all posts, and validate navigation links function properly",
         "priority": "high",
-        "dependencies": [
-          2
-        ],
+        "dependencies": [2],
         "status": "done",
         "subtasks": [
           {
@@ -207,10 +192,7 @@
             "id": 4,
             "title": "Implement Static Generation Configuration",
             "description": "Set up generateStaticParams for static generation of all blog routes",
-            "dependencies": [
-              "3.2",
-              "3.3"
-            ],
+            "dependencies": ["3.2", "3.3"],
             "details": "Implement generateStaticParams functions in both blog listing and individual post pages to enable static generation at build time. Ensure all post slugs are properly generated for static paths.",
             "status": "done",
             "testStrategy": ""
@@ -228,9 +210,7 @@
             "id": 6,
             "title": "Implement Post Listing Component with Sorting",
             "description": "Create reusable post listing component with date-based sorting functionality",
-            "dependencies": [
-              "3.3"
-            ],
+            "dependencies": ["3.3"],
             "details": "Build a PostList component that can be reused across different pages. Include sorting by publication date, post preview cards with metadata, and proper loading states. Make it configurable for different display modes.",
             "status": "done",
             "testStrategy": ""
@@ -239,9 +219,7 @@
             "id": 7,
             "title": "Set Up Individual Post Layout and Content Rendering",
             "description": "Create post layout component with proper content rendering and metadata display",
-            "dependencies": [
-              "3.3"
-            ],
+            "dependencies": ["3.3"],
             "details": "Implement PostLayout component that handles markdown content rendering, metadata display (title, date, tags), and proper typography. Include support for code highlighting and other markdown features.",
             "status": "done",
             "testStrategy": ""
@@ -255,9 +233,7 @@
         "details": "1. Audit existing blog posts in /Users/ak/Workspace/Projects/aakash-patel\n2. Create migration script to copy posts to /content/posts/\n3. Convert any Eleventy-specific frontmatter to standard format\n4. Preserve existing URL structure with /posts/[slug] format\n5. Migrate associated assets (images, files) to /public directory\n6. Update internal links and asset references in posts\n7. Validate all posts have required frontmatter fields",
         "testStrategy": "Verify all existing posts are successfully migrated, check that frontmatter parsing works for all posts, ensure asset links resolve correctly, and validate that URL structure matches original site",
         "priority": "high",
-        "dependencies": [
-          3
-        ],
+        "dependencies": [3],
         "status": "done",
         "subtasks": [],
         "notes": "Migrated 404.md, about.md, and projects.md. Blog posts and images were already present."
@@ -269,9 +245,7 @@
         "details": "1. Create /app/blog/categories/[category]/page.tsx for category listings\n2. Implement utility functions to extract unique categories from posts\n3. Create category listing components with proper styling\n4. Add generateStaticParams for all category pages\n5. Implement filtering logic to show posts by category\n6. Add category links to individual post pages\n7. Create category overview page showing all available categories\n8. Implement breadcrumb navigation for category pages",
         "testStrategy": "Verify category pages display correct filtered posts, test category overview page shows all categories, ensure all category pages generate statically, and validate links between posts and category pages work correctly",
         "priority": "medium",
-        "dependencies": [
-          4
-        ],
+        "dependencies": [4],
         "status": "done",
         "subtasks": [
           {
@@ -305,9 +279,7 @@
             "id": 4,
             "title": "Implement Static Generation for Taxonomy Pages",
             "description": "Set up static generation system for all taxonomy-related pages",
-            "dependencies": [
-              "5.3"
-            ],
+            "dependencies": ["5.3"],
             "details": "Configure generateStaticParams for tag and category pages, implement build-time generation of all taxonomy routes, optimize static generation performance, and ensure proper fallback handling for dynamic taxonomy pages",
             "status": "done",
             "testStrategy": ""
@@ -316,10 +288,7 @@
             "id": 5,
             "title": "Create Taxonomy Overview Pages",
             "description": "Build overview pages that display all available tags and categories",
-            "dependencies": [
-              "5.1",
-              "5.2"
-            ],
+            "dependencies": ["5.1", "5.2"],
             "details": "Create /app/blog/tags/page.tsx showing all available tags, create /app/blog/categories/page.tsx showing all available categories, implement tag and category cloud components, and add proper navigation between overview and individual taxonomy pages",
             "status": "done",
             "testStrategy": ""
@@ -328,10 +297,7 @@
             "id": 6,
             "title": "Implement Taxonomy Linking System",
             "description": "Create comprehensive linking system between posts and taxonomy pages",
-            "dependencies": [
-              "5.1",
-              "5.2"
-            ],
+            "dependencies": ["5.1", "5.2"],
             "details": "Add tag and category links to individual post pages, implement breadcrumb navigation for taxonomy pages, create related posts functionality based on shared taxonomy, and ensure proper link styling and hover states",
             "status": "done",
             "testStrategy": ""
@@ -340,10 +306,7 @@
             "id": 7,
             "title": "Develop Taxonomy Filtering and Search",
             "description": "Implement advanced filtering and search capabilities for taxonomy systems",
-            "dependencies": [
-              "5.3",
-              "5.4"
-            ],
+            "dependencies": ["5.3", "5.4"],
             "details": "Create multi-tag and multi-category filtering functionality, implement search within taxonomy results, add sorting options for taxonomy-filtered posts, and create URL parameter handling for complex filtering scenarios",
             "status": "done",
             "testStrategy": ""
@@ -352,10 +315,7 @@
             "id": 8,
             "title": "Create Taxonomy Management Components",
             "description": "Build reusable components for displaying and managing taxonomy information",
-            "dependencies": [
-              "5.3",
-              "5.6"
-            ],
+            "dependencies": ["5.3", "5.6"],
             "details": "Create taxonomy badge components for tags and categories, implement taxonomy count displays, build taxonomy navigation components, and create responsive taxonomy layouts for mobile and desktop views",
             "status": "done",
             "testStrategy": ""
@@ -369,9 +329,7 @@
         "details": "1. Implement Next.js metadata API for all pages\n2. Create dynamic metadata generation for blog posts using frontmatter\n3. Set up Open Graph and Twitter Card meta tags\n4. Implement JSON-LD structured data for blog posts\n5. Create sitemap.xml generation using Next.js sitemap API\n6. Set up robots.txt configuration\n7. Implement canonical URLs and proper meta descriptions\n8. Add schema.org markup for blog content",
         "testStrategy": "Validate meta tags are correctly generated for all pages, test Open Graph preview in social media validators, verify sitemap.xml contains all pages, and check structured data using Google's Rich Results Test",
         "priority": "medium",
-        "dependencies": [
-          5
-        ],
+        "dependencies": [5],
         "status": "done",
         "subtasks": [
           {
@@ -387,9 +345,7 @@
             "id": 2,
             "title": "Configure Open Graph and Twitter Cards",
             "description": "Implement comprehensive Open Graph and Twitter Card meta tags for enhanced social media sharing",
-            "dependencies": [
-              "6.1"
-            ],
+            "dependencies": ["6.1"],
             "details": "Set up og:title, og:description, og:image, og:url, and og:type meta tags, configure Twitter Card meta tags including twitter:card, twitter:title, twitter:description, and twitter:image, create dynamic image generation for blog posts, and test social media preview functionality",
             "status": "done",
             "testStrategy": ""
@@ -398,9 +354,7 @@
             "id": 3,
             "title": "Implement JSON-LD Structured Data",
             "description": "Create JSON-LD structured data markup for blog posts and website information to enhance search engine understanding",
-            "dependencies": [
-              "6.1"
-            ],
+            "dependencies": ["6.1"],
             "details": "Implement Article schema for blog posts with author, datePublished, dateModified, and headline properties, add WebSite schema with searchAction, create Person schema for author information, and validate structured data using Google's Rich Results Test",
             "status": "done",
             "testStrategy": ""
@@ -418,9 +372,7 @@
             "id": 5,
             "title": "Implement Schema.org Markup",
             "description": "Add comprehensive schema.org markup throughout the site for better semantic understanding by search engines",
-            "dependencies": [
-              "6.3"
-            ],
+            "dependencies": ["6.3"],
             "details": "Implement BlogPosting schema markup for individual blog posts, add Organization schema for site identity, create BreadcrumbList schema for navigation, implement WebPage schema for static pages, and ensure all schema markup validates correctly",
             "status": "done",
             "testStrategy": ""
@@ -429,9 +381,7 @@
             "id": 6,
             "title": "Configure Robots.txt and Canonical URLs",
             "description": "Set up robots.txt configuration and implement canonical URL system to prevent duplicate content issues",
-            "dependencies": [
-              "6.4"
-            ],
+            "dependencies": ["6.4"],
             "details": "Create robots.txt file with appropriate crawling directives, implement canonical URL meta tags for all pages, set up proper URL structure to avoid duplicate content, configure sitemap reference in robots.txt, and ensure canonical URLs are absolute and consistent",
             "status": "done",
             "testStrategy": ""
@@ -440,9 +390,7 @@
             "id": 7,
             "title": "Implement Dynamic Meta Descriptions",
             "description": "Create system for generating compelling and SEO-optimized meta descriptions for all pages",
-            "dependencies": [
-              "6.1"
-            ],
+            "dependencies": ["6.1"],
             "details": "Extract and truncate blog post excerpts for meta descriptions, create template-based descriptions for category pages, implement fallback descriptions for pages without custom content, ensure descriptions are within 150-160 character limit, and avoid duplicate descriptions across pages",
             "status": "done",
             "testStrategy": ""
@@ -451,15 +399,7 @@
             "id": 8,
             "title": "SEO Validation and Testing",
             "description": "Comprehensive testing and validation of all SEO implementations using various tools and validators",
-            "dependencies": [
-              "6.1",
-              "6.2",
-              "6.3",
-              "6.4",
-              "6.5",
-              "6.6",
-              "6.7"
-            ],
+            "dependencies": ["6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7"],
             "details": "Test meta tags generation across all page types, validate Open Graph previews using Facebook and Twitter validators, verify structured data using Google's Rich Results Test and Schema.org validator, test sitemap accessibility and format, check robots.txt configuration, and perform comprehensive SEO audit using tools like Lighthouse",
             "status": "done",
             "testStrategy": ""
@@ -473,9 +413,7 @@
         "details": "1. Create /app/feed.xml/route.ts API route for RSS generation\n2. Implement RSS XML generation using all blog posts\n3. Include proper RSS metadata (title, description, link, pubDate)\n4. Sort posts by date in descending order\n5. Include full post content or excerpts in RSS items\n6. Set proper Content-Type headers for XML response\n7. Add RSS feed link to site header/meta tags",
         "testStrategy": "Verify RSS feed generates valid XML, test feed in RSS readers, ensure all posts appear with correct metadata, and validate feed validates against RSS specification",
         "priority": "medium",
-        "dependencies": [
-          4
-        ],
+        "dependencies": [4],
         "status": "skipped",
         "subtasks": []
       },
@@ -486,9 +424,7 @@
         "details": "1. Implement dark/light mode toggle using next-themes\n2. Apply Portfolio Starter Kit color scheme and typography\n3. Ensure responsive design works across mobile and desktop\n4. Style blog post content with proper typography classes\n5. Implement responsive navigation menu\n6. Add proper spacing and layout for blog listing and individual posts\n7. Ensure accessibility standards are met (WCAG 2.1)\n8. Test cross-browser compatibility",
         "testStrategy": "Test responsive design on various screen sizes, verify dark/light mode toggle works correctly, validate accessibility with screen readers, and ensure consistent styling across all browsers",
         "priority": "medium",
-        "dependencies": [
-          3
-        ],
+        "dependencies": [3],
         "status": "done",
         "subtasks": [
           {
@@ -504,9 +440,7 @@
             "id": 2,
             "title": "Implement Portfolio Starter Kit design system integration",
             "description": "Apply the Portfolio Starter Kit color scheme, typography, and design tokens across the application",
-            "dependencies": [
-              "8.1"
-            ],
+            "dependencies": ["8.1"],
             "details": "Import and configure Portfolio Starter Kit CSS variables, set up color schemes for both light and dark modes, implement typography classes, and establish consistent spacing and layout tokens",
             "status": "skipped",
             "testStrategy": ""
@@ -515,9 +449,7 @@
             "id": 3,
             "title": "Create responsive navigation component",
             "description": "Build a mobile-friendly navigation menu that adapts to different screen sizes",
-            "dependencies": [
-              "8.2"
-            ],
+            "dependencies": ["8.2"],
             "details": "Implement responsive navigation with hamburger menu for mobile, ensure proper touch targets, add smooth transitions, and integrate theme toggle button into navigation",
             "status": "done",
             "testStrategy": ""
@@ -526,9 +458,7 @@
             "id": 4,
             "title": "Style blog post content with responsive typography",
             "description": "Apply responsive typography classes to blog post content and ensure proper content formatting",
-            "dependencies": [
-              "8.2"
-            ],
+            "dependencies": ["8.2"],
             "details": "Implement responsive typography for headings, paragraphs, and code blocks, ensure proper line heights and spacing, style markdown-rendered content, and optimize reading experience across devices",
             "status": "done",
             "testStrategy": ""
@@ -537,10 +467,7 @@
             "id": 5,
             "title": "Implement responsive layout for blog listing and individual posts",
             "description": "Create responsive layouts that work seamlessly across mobile and desktop devices",
-            "dependencies": [
-              "8.3",
-              "8.4"
-            ],
+            "dependencies": ["8.3", "8.4"],
             "details": "Design responsive grid layouts for blog listing, implement flexible post layouts, ensure proper spacing and margins, and optimize content presentation for different screen sizes",
             "status": "done",
             "testStrategy": ""
@@ -549,11 +476,7 @@
             "id": 6,
             "title": "Ensure WCAG 2.1 accessibility compliance",
             "description": "Implement accessibility features to meet WCAG 2.1 standards including keyboard navigation and screen reader support",
-            "dependencies": [
-              "8.3",
-              "8.4",
-              "8.5"
-            ],
+            "dependencies": ["8.3", "8.4", "8.5"],
             "details": "Add proper ARIA labels, ensure keyboard navigation works for all interactive elements, implement focus management, provide sufficient color contrast ratios, and add skip links for screen readers",
             "status": "done",
             "testStrategy": ""
@@ -562,10 +485,7 @@
             "id": 7,
             "title": "Conduct cross-browser compatibility testing",
             "description": "Test the responsive design and theme functionality across different browsers and devices",
-            "dependencies": [
-              "8.5",
-              "8.6"
-            ],
+            "dependencies": ["8.5", "8.6"],
             "details": "Test on Chrome, Firefox, Safari, and Edge browsers, verify responsive breakpoints work correctly, ensure theme toggle functions properly across browsers, and validate CSS compatibility",
             "status": "pending",
             "testStrategy": ""
@@ -574,10 +494,7 @@
             "id": 8,
             "title": "Optimize performance and finalize responsive implementation",
             "description": "Perform final optimizations and ensure all responsive design requirements are met",
-            "dependencies": [
-              "8.6",
-              "8.7"
-            ],
+            "dependencies": ["8.6", "8.7"],
             "details": "Optimize CSS bundle size, validate responsive images, perform final accessibility audit, and conduct comprehensive testing across all screen sizes and devices. Note: Smooth theme transitions are no longer applicable as dark mode has been removed.",
             "status": "pending",
             "testStrategy": ""
@@ -591,9 +508,7 @@
         "details": "1. Implement Next.js Image component for all blog images\n2. Set up image optimization in next.config.js\n3. Implement lazy loading for blog post listings\n4. Optimize bundle size by analyzing and splitting code\n5. Set up proper caching headers for static assets\n6. Implement preloading for critical resources\n7. Optimize fonts and CSS delivery\n8. Run Lighthouse audits and address performance issues",
         "testStrategy": "Run Lighthouse audits to achieve 90+ performance score, test image loading and optimization, verify lazy loading works correctly, and measure Core Web Vitals metrics",
         "priority": "medium",
-        "dependencies": [
-          8
-        ],
+        "dependencies": [8],
         "status": "pending",
         "subtasks": []
       },
@@ -604,9 +519,7 @@
         "details": "1. Configure production build settings and environment variables\n2. Set up deployment pipeline (Vercel recommended)\n3. Configure custom domain and SSL certificates\n4. Implement proper redirects from old URLs if needed\n5. Set up monitoring and analytics\n6. Perform comprehensive cross-browser testing\n7. Validate all links and ensure no broken references\n8. Test performance in production environment\n9. Create backup and rollback procedures",
         "testStrategy": "Verify production deployment works correctly, test all functionality in production environment, validate SSL certificates and domain configuration, and ensure monitoring systems are operational",
         "priority": "low",
-        "dependencies": [
-          9
-        ],
+        "dependencies": [9],
         "status": "pending",
         "subtasks": []
       }

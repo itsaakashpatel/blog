@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { getAllCategories } from "app/blog/utils";
+import Link from 'next/link';
+import { getAllCategories } from 'app/blog/utils';
 
 export default function CategoriesPage() {
   const allCategories = getAllCategories();

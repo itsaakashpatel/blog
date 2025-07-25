@@ -1,17 +1,17 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 const navItems = {
-  "/": {
-    name: "home",
+  '/': {
+    name: 'home',
   },
-  "/blog": {
-    name: "blog",
+  '/blog': {
+    name: 'blog',
   },
-  "/projects": {
-    name: "projects",
+  '/projects': {
+    name: 'projects',
   },
-  "/about": {
-    name: "about",
+  '/about': {
+    name: 'about',
   },
 };
 
@@ -31,7 +31,7 @@ export function Navbar() {
                   key={path}
                   href={path}
                   className="transition-all hover:text-neutral-800 flex align-middle relative py-1 px-2 m-1"
-                  aria-label={name === "home" ? "Home page" : `${name} page`}
+                  aria-label={name === 'home' ? 'Home page' : `${name} page`}
                 >
                   {name}
                 </Link>

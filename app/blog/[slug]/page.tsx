@@ -1,22 +1,22 @@
-import { notFound } from 'next/navigation'
-import { CustomMDX } from 'app/components/mdx'
-import { formatDate, getBlogPosts } from 'app/blog/utils'
-import { baseUrl } from 'app/sitemap'
-import { CategoryBadge } from 'app/components/category-badge'
+import { notFound } from 'next/navigation';
+import { CustomMDX } from 'app/components/mdx';
+import { formatDate, getBlogPosts } from 'app/blog/utils';
+import { baseUrl } from 'app/sitemap';
+import { CategoryBadge } from 'app/components/category-badge';
 
 export async function generateStaticParams() {
-  let posts = getBlogPosts()
+  let posts = getBlogPosts();
 
   return posts.map((post) => ({
     slug: post.slug,
-  }))
+  }));
 }
 
 export async function generateMetadata(props) {
   const params = await props.params;
-  let post = getBlogPosts().find((post) => post.slug === params.slug)
+  let post = getBlogPosts().find((post) => post.slug === params.slug);
   if (!post) {
-    return
+    return;
   }
 
   let {
@@ -24,10 +24,10 @@ export async function generateMetadata(props) {
     publishedAt: publishedTime,
     summary: description,
     image,
-  } = post.metadata
+  } = post.metadata;
   let ogImage = image
     ? image
-    : `${baseUrl}/og?title=${encodeURIComponent(title)}`
+    : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
   return {
     title,
@@ -50,15 +50,15 @@ export async function generateMetadata(props) {
       description,
       images: [ogImage],
     },
-  }
+  };
 }
 
 export default async function Blog(props) {
   const params = await props.params;
-  let post = getBlogPosts().find((post) => post.slug === params.slug)
+  let post = getBlogPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -94,9 +94,7 @@ export default async function Blog(props) {
           {post.metadata.category && (
             <>
               {' '}
-              in
-              {' '}
-              <CategoryBadge category={post.metadata.category} />
+              in <CategoryBadge category={post.metadata.category} />
             </>
           )}
         </p>
@@ -105,5 +103,5 @@ export default async function Blog(props) {
         <CustomMDX source={post.content} />
       </article>
     </section>
-  )
+  );
 }

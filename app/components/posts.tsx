@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { formatDate, getBlogPosts } from "app/blog/utils";
+import Link from 'next/link';
+import { formatDate, getBlogPosts } from 'app/blog/utils';
 
 interface BlogPost {
   slug: string;
@@ -42,7 +42,7 @@ export function BlogPosts({
           <div className="flex flex-col space-y-2">
             <div className="flex items-start">
               <span className="text-base font-normal text-neutral-600 mr-2 flex-shrink-0 mt-0.5">
-                {String(index + 1).padStart(2, "0")}.
+                {String(index + 1).padStart(2, '0')}.
               </span>
               <h2 className="text-xl font-semibold text-neutral-900 leading-tight tracking-tight">
                 {post.metadata.title}
@@ -56,7 +56,7 @@ export function BlogPosts({
       ))}
       {showArchiveNote && sortedPosts.length > 5 && (
         <p className="mt-8 text-neutral-600">
-          {sortedPosts.length - 5} more posts can be found in the{" "}
+          {sortedPosts.length - 5} more posts can be found in the{' '}
           <Link
             href="/blog"
             className="text-neutral-900 underline hover:no-underline"

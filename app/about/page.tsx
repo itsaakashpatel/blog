@@ -34,9 +34,7 @@ I enjoy meeting new people and hearing new perspectives. Reach out if you want t
 export default function AboutPage() {
   return (
     <section>
-      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">
-        About
-      </h1>
+      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">About</h1>
       <CustomMDX source={aboutContent} />
     </section>
   );
