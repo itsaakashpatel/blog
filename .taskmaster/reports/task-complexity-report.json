@@ -1,83 +1,83 @@
 {
-	"meta": {
-		"generatedAt": "2025-07-21T06:14:29.310Z",
-		"tasksAnalyzed": 10,
-		"totalTasks": 10,
-		"analysisCount": 10,
-		"thresholdScore": 5,
-		"projectName": "Task Master",
-		"usedResearch": false
-	},
-	"complexityAnalysis": [
-		{
-			"taskId": 1,
-			"complexityScore": 4,
-			"recommendedSubtasks": 7,
-			"expansionPrompt": "Break down the Next.js project setup into individual configuration steps, focusing on template initialization, dependency management, and development environment configuration.",
-			"reasoning": "Moderate complexity due to multiple configuration steps and potential dependency conflicts. Well-defined steps make it suitable for expansion into discrete subtasks."
-		},
-		{
-			"taskId": 2,
-			"complexityScore": 6,
-			"recommendedSubtasks": 7,
-			"expansionPrompt": "Decompose the MDX processing pipeline into separate configuration tasks for each component: package installation, frontmatter parsing, compilation setup, and utility function creation.",
-			"reasoning": "Higher complexity due to integration of multiple systems (MDX, frontmatter, TypeScript interfaces) and potential configuration conflicts between packages."
-		},
-		{
-			"taskId": 3,
-			"complexityScore": 7,
-			"recommendedSubtasks": 7,
-			"expansionPrompt": "Split the core blog routing implementation into individual page creation tasks, utility function development, and static generation configuration for each route type.",
-			"reasoning": "High complexity involving Next.js App Router patterns, static generation, and multiple interconnected components. Each routing aspect can be developed independently."
-		},
-		{
-			"taskId": 4,
-			"complexityScore": 8,
-			"recommendedSubtasks": 7,
-			"expansionPrompt": "Break down the content migration into audit, script creation, format conversion, asset migration, and validation phases to handle the complexity of data transformation.",
-			"reasoning": "High complexity due to data migration risks, format conversion requirements, and need to preserve existing URL structure. Requires careful validation at each step."
-		},
-		{
-			"taskId": 5,
-			"complexityScore": 7,
-			"recommendedSubtasks": 8,
-			"expansionPrompt": "Separate the taxonomy system into individual components: tag pages, category pages, utility functions, static generation, and linking systems for better manageability.",
-			"reasoning": "High complexity with multiple dynamic routes, filtering logic, and static generation requirements. Each taxonomy type can be developed independently."
-		},
-		{
-			"taskId": 6,
-			"complexityScore": 8,
-			"recommendedSubtasks": 8,
-			"expansionPrompt": "Divide SEO implementation into specific areas: metadata API, Open Graph setup, structured data, sitemap generation, and schema markup for focused development.",
-			"reasoning": "High complexity involving multiple SEO standards, structured data formats, and integration with Next.js metadata systems. Each SEO aspect requires specialized knowledge."
-		},
-		{
-			"taskId": 7,
-			"complexityScore": 5,
-			"recommendedSubtasks": 7,
-			"expansionPrompt": "Break down RSS feed generation into API route creation, XML generation logic, metadata handling, content formatting, and header configuration tasks.",
-			"reasoning": "Moderate complexity with straightforward RSS XML generation but requires proper API route setup and content formatting. Well-defined specification makes expansion clear."
-		},
-		{
-			"taskId": 8,
-			"complexityScore": 7,
-			"recommendedSubtasks": 8,
-			"expansionPrompt": "Separate responsive design implementation into theme setup, component styling, accessibility compliance, and cross-browser testing phases.",
-			"reasoning": "High complexity involving design system integration, accessibility requirements, and cross-browser compatibility. Each design aspect can be tackled independently."
-		},
-		{
-			"taskId": 9,
-			"complexityScore": 8,
-			"recommendedSubtasks": 8,
-			"expansionPrompt": "Divide performance optimization into image handling, bundle optimization, caching configuration, and Lighthouse audit phases for systematic improvement.",
-			"reasoning": "High complexity requiring performance analysis, optimization techniques, and measurement tools. Each optimization area requires different expertise and can be measured independently."
-		},
-		{
-			"taskId": 10,
-			"complexityScore": 9,
-			"recommendedSubtasks": 9,
-			"expansionPrompt": "Break down deployment into environment configuration, pipeline setup, domain configuration, testing phases, and monitoring setup for comprehensive production readiness.",
-			"reasoning": "Highest complexity involving production infrastructure, deployment pipelines, and comprehensive testing. Critical task requiring careful validation at each step to ensure successful launch."
-		}
-	]
+  "meta": {
+    "generatedAt": "2025-07-21T06:14:29.310Z",
+    "tasksAnalyzed": 10,
+    "totalTasks": 10,
+    "analysisCount": 10,
+    "thresholdScore": 5,
+    "projectName": "Task Master",
+    "usedResearch": false
+  },
+  "complexityAnalysis": [
+    {
+      "taskId": 1,
+      "complexityScore": 4,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Break down the Next.js project setup into individual configuration steps, focusing on template initialization, dependency management, and development environment configuration.",
+      "reasoning": "Moderate complexity due to multiple configuration steps and potential dependency conflicts. Well-defined steps make it suitable for expansion into discrete subtasks."
+    },
+    {
+      "taskId": 2,
+      "complexityScore": 6,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Decompose the MDX processing pipeline into separate configuration tasks for each component: package installation, frontmatter parsing, compilation setup, and utility function creation.",
+      "reasoning": "Higher complexity due to integration of multiple systems (MDX, frontmatter, TypeScript interfaces) and potential configuration conflicts between packages."
+    },
+    {
+      "taskId": 3,
+      "complexityScore": 7,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Split the core blog routing implementation into individual page creation tasks, utility function development, and static generation configuration for each route type.",
+      "reasoning": "High complexity involving Next.js App Router patterns, static generation, and multiple interconnected components. Each routing aspect can be developed independently."
+    },
+    {
+      "taskId": 4,
+      "complexityScore": 8,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Break down the content migration into audit, script creation, format conversion, asset migration, and validation phases to handle the complexity of data transformation.",
+      "reasoning": "High complexity due to data migration risks, format conversion requirements, and need to preserve existing URL structure. Requires careful validation at each step."
+    },
+    {
+      "taskId": 5,
+      "complexityScore": 7,
+      "recommendedSubtasks": 8,
+      "expansionPrompt": "Separate the taxonomy system into individual components: tag pages, category pages, utility functions, static generation, and linking systems for better manageability.",
+      "reasoning": "High complexity with multiple dynamic routes, filtering logic, and static generation requirements. Each taxonomy type can be developed independently."
+    },
+    {
+      "taskId": 6,
+      "complexityScore": 8,
+      "recommendedSubtasks": 8,
+      "expansionPrompt": "Divide SEO implementation into specific areas: metadata API, Open Graph setup, structured data, sitemap generation, and schema markup for focused development.",
+      "reasoning": "High complexity involving multiple SEO standards, structured data formats, and integration with Next.js metadata systems. Each SEO aspect requires specialized knowledge."
+    },
+    {
+      "taskId": 7,
+      "complexityScore": 5,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Break down RSS feed generation into API route creation, XML generation logic, metadata handling, content formatting, and header configuration tasks.",
+      "reasoning": "Moderate complexity with straightforward RSS XML generation but requires proper API route setup and content formatting. Well-defined specification makes expansion clear."
+    },
+    {
+      "taskId": 8,
+      "complexityScore": 7,
+      "recommendedSubtasks": 8,
+      "expansionPrompt": "Separate responsive design implementation into theme setup, component styling, accessibility compliance, and cross-browser testing phases.",
+      "reasoning": "High complexity involving design system integration, accessibility requirements, and cross-browser compatibility. Each design aspect can be tackled independently."
+    },
+    {
+      "taskId": 9,
+      "complexityScore": 8,
+      "recommendedSubtasks": 8,
+      "expansionPrompt": "Divide performance optimization into image handling, bundle optimization, caching configuration, and Lighthouse audit phases for systematic improvement.",
+      "reasoning": "High complexity requiring performance analysis, optimization techniques, and measurement tools. Each optimization area requires different expertise and can be measured independently."
+    },
+    {
+      "taskId": 10,
+      "complexityScore": 9,
+      "recommendedSubtasks": 9,
+      "expansionPrompt": "Break down deployment into environment configuration, pipeline setup, domain configuration, testing phases, and monitoring setup for comprehensive production readiness.",
+      "reasoning": "Highest complexity involving production infrastructure, deployment pipelines, and comprehensive testing. Critical task requiring careful validation at each step to ensure successful launch."
+    }
+  ]
 }

@@ -12,39 +12,33 @@ function ArrowIcon() {
         fill="currentColor"
       />
     </svg>
-  )
+  );
 }
 
 export default function Footer() {
   return (
     <footer className="mb-16">
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
-        <li>
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-8 text-neutral-600 text-sm">
+        <div className="flex space-x-4">
           <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://github.com/vercel/next.js"
+            className="transition-all hover:text-neutral-800"
+            href="/sitemap.xml"
+            aria-label="Link to sitemap"
           >
-            <ArrowIcon />
-            <p className="ml-2 h-7">github</p>
+            Sitemap
           </a>
-        </li>
-        <li>
           <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://vercel.com/templates/next.js/portfolio-starter-kit"
+            className="transition-all hover:text-neutral-800"
+            href="mailto:aakashpatel25274@gmail.com"
+            aria-label="Email Aakash Patel"
           >
-            <ArrowIcon />
-            <p className="ml-2 h-7">view source</p>
+            Contact
           </a>
-        </li>
-      </ul>
-      <p className="mt-8 text-neutral-600 dark:text-neutral-300">
-        © {new Date().getFullYear()} MIT Licensed
-      </p>
+        </div>
+        <p className="mt-4 sm:mt-0">
+          © 2021-2025 by Aakash Patel | All Rights Reserved
+        </p>
+      </div>
     </footer>
-  )
+  );
 }

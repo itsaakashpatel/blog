@@ -5,20 +5,26 @@ import { notFound } from 'next/navigation';
 export async function generateStaticParams() {
   const posts = getBlogPosts();
   const categories = new Set<string>();
-  posts.forEach(post => {
+  posts.forEach((post) => {
     if (post.metadata.category) {
       categories.add(post.metadata.category);
     }
   });
 
-  return Array.from(categories).map(category => ({
+  return Array.from(categories).map((category) => ({
     category,
   }));
 }
 
-export default function CategoryPage({ params }: { params: { category: string } }) {
+export default function CategoryPage({
+  params,
+}: {
+  params: { category: string };
+}) {
   const { category } = params;
-  const posts = getBlogPosts().filter(post => post.metadata.category === category);
+  const posts = getBlogPosts().filter(
+    (post) => post.metadata.category === category
+  );
 
   if (posts.length === 0) {
     notFound();

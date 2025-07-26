@@ -4,6 +4,7 @@ publishedAt: 2025-05-27
 summary: Learn how to skip the first render of the useEffect hook in React using a custom hook or useRef to manage the initial render state.
 category: react-js
 ---
+
 In certain situations, you want to skip the first render of the `useEffect` hook. Currently, we don’t have any mechanism built or hook defined by React Team which does the job for us.
 
 ## What is useEffect?
@@ -18,8 +19,8 @@ Not aware of that?? So here’s the catch. For example.
 
 ```jsx
 useEffect(() => {
-  if(searchText) getSearchTextData(searchText)
-}, [searchText])
+  if (searchText) getSearchTextData(searchText);
+}, [searchText]);
 ```
 
 Here, I added the `useEffects` block and `searchText` in the dependency array. Ideally, when searchText will change, the `useEffect` hook should be triggered.
@@ -55,7 +56,7 @@ const exampleComponent = () => {
   });
 
   // Rest component code here
-}
+};
 ```
 
 In this example, the `checkFirstRender` ref is initialized to `true`. In the useEffect callback, if `checkFirstRender.current` is `true`, we skip the rest of the function and set the `checkFirstRender.current` to `false`. On subsequent updates, the rest of the useEffect code will execute as It should.
@@ -65,7 +66,7 @@ By using this approach, you can effectively skip the first useEffect call in Rea
 ## A custom hook – useSkipFirstRender
 
 ```js
-import {useEffect, useRef} from 'react';
+import { useEffect, useRef } from 'react';
 
 function useSkipFirstRender(callback, dependencies) {
   const firstRenderRef = useRef(true);
@@ -90,8 +91,8 @@ Now, our main example can be rewritten in this way.
 
 ```js
 useSkipFirstRender(() => {
-    getSearchTextData(searchText);
-  }, [searchText]);
+  getSearchTextData(searchText);
+}, [searchText]);
 ```
 
 _I hope you liked this article. If you know any other way to skip the first render of useEffect then do let me know in the comments._
