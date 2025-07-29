@@ -1,0 +1,13 @@
+name = "blog"
+compatibility_date = "2025-07-28"
+
+[pages]
+
+[vars]
+NODE_VERSION = "20"
+
+[placement]
+mode = "smart"
+
+[compatibility_flags]
+nodejs_compat = true

@@ -10,7 +10,8 @@
   },
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "pnpm pages:build",
+    "pages:build": "npx @cloudflare/next-on-pages",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write ."
@@ -47,6 +48,7 @@
     "url": "https://aakashpatel.in"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.13",
     "prettier": "^3.6.2"
   }
 }
