@@ -1,47 +1,179 @@
-# Portfolio Blog Starter
+# Aakash Patel's Blog
 
-This is a porfolio site template complete with a blog. Includes:
+A modern, fast, and SEO-optimized personal blog built with Next.js 15, TypeScript, and Tailwind CSS. Features MDX support for rich content creation and a clean, minimalist design.
 
-- MDX and Markdown support
-- Optimized for SEO (sitemap, robots, JSON-LD schema)
-- RSS Feed
-- Dynamic OG images
-- Syntax highlighting
-- Tailwind v4
-- Vercel Speed Insights / Web Analytics
-- Geist font
+## 🚀 Features
 
-## Demo
+- **⚡ Performance**: Built with Next.js 15 and optimized for speed
+- **📝 MDX Support**: Write blog posts with MDX (Markdown + JSX)
+- **🎨 Modern Design**: Clean, responsive design with Tailwind CSS
+- **🔍 SEO Optimized**: Built-in SEO optimization with proper meta tags
+- **📱 Responsive**: Mobile-first design that works on all devices
+- **🏷️ Categories**: Organize posts by categories
+- **📊 Analytics**: Integrated with Vercel Analytics and Speed Insights
+- **🎯 TypeScript**: Fully typed for better developer experience
+- **📖 Draft Posts**: Support for draft posts that won't be published
+- **🗂️ Organized Structure**: Posts organized by year for easy maintenance
 
-https://portfolio-blog-starter.vercel.app
+## 🛠️ Tech Stack
 
-## How to Use
+- **Framework**: [Next.js 15](https://nextjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Content**: [MDX](https://mdxjs.com/) for rich blog posts
+- **Deployment**: [Cloudflare Pages](https://pages.cloudflare.com/)
+- **Analytics**: [Vercel Analytics](https://vercel.com/analytics)
+- **Package Manager**: [pnpm](https://pnpm.io/)
 
-You can choose from one of the following two methods to use this repository:
+## 📁 Project Structure
 
-### One-Click Deploy
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/blog&project-name=blog&repository-name=blog)
-
-### Clone and Deploy
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
-
-```bash
-pnpm create next-app --example https://github.com/vercel/examples/tree/main/solutions/blog blog
+```
+├── app/
+│   ├── blog/
+│   │   ├── posts/
+│   │   │   ├── 2023/        # Posts organized by year
+│   │   │   ├── 2024/
+│   │   │   └── 2025/
+│   │   ├── [slug]/
+│   │   │   └── page.tsx     # Individual blog post page
+│   │   ├── page.tsx         # Blog listing page
+│   │   └── utils.ts         # Blog utilities
+│   ├── components/
+│   │   ├── posts.tsx        # Blog posts component
+│   │   ├── nav.tsx          # Navigation component
+│   │   ├── footer.tsx       # Footer component
+│   │   └── mdx.tsx          # MDX components
+│   ├── about/
+│   ├── projects/
+│   ├── layout.tsx           # Root layout
+│   └── page.tsx             # Homepage
+├── public/
+│   └── images/              # Static images
+└── .vscode/                 # VS Code settings
 ```
 
-Then, run Next.js in development mode:
+## 🚀 Getting Started
 
-```bash
-pnpm dev
-```
+### Prerequisites
 
-Deploy it to the cloud with [Vercel](https://vercel.com/templates) ([Documentation](https://nextjs.org/docs/app/building-your-application/deploying)).
+- Node.js 20 (see `.nvmrc`)
+- pnpm package manager
 
-## Author
+### Installation
 
-- **Name:** Aakash Patel
-- **Email:** aakash@example.com
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/itsaakashpatel/blog.git
+   cd blog
+   ```
+
+2. **Use the correct Node.js version**
+
+   ```bash
+   nvm use
+   ```
+
+3. **Install dependencies**
+
+   ```bash
+   pnpm install
+   ```
+
+4. **Run the development server**
+
+   ```bash
+   pnpm dev
+   ```
+
+5. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 📝 Writing Blog Posts
+
+### Creating a New Post
+
+1. **Create a new MDX file** in the appropriate year folder:
+
+   ```
+   app/blog/posts/2025/my-new-post.mdx
+   ```
+
+2. **Add frontmatter** at the top of your file:
+
+   ```yaml
+   ---
+   title: 'Your Post Title'
+   publishedAt: 2025-07-28
+   summary: 'A brief description of your post'
+   category: 'technology' # optional
+   status: 'published' # or "draft" to hide the post
+   ---
+   ```
+
+3. **Write your content** using Markdown and JSX:
+
+   ````mdx
+   # Your Post Title
+
+   This is a paragraph with **bold text** and _italic text_.
+
+   ```javascript
+   console.log('Code blocks are supported!');
+   ```
+   ````
+
+   You can also use React components here!
+
+   ```
+
+   ```
+
+### Post Status
+
+- **Published**: Posts without `status` field or with `status: "published"` will be visible
+- **Draft**: Posts with `status: "draft"` will be hidden from the public site
+
+### Categories
+
+Add a `category` field to organize your posts. Categories will automatically appear in the navigation.
+
+## 🎨 Customization
+
+### Styling
+
+The blog uses Tailwind CSS for styling. You can customize the design by modifying:
+
+- `tailwind.config.js` - Tailwind configuration
+- `app/global.css` - Global styles
+- Component files - Individual component styles
+
+### Components
+
+- `app/components/posts.tsx` - Blog post listing
+- `app/components/nav.tsx` - Navigation bar
+- `app/components/footer.tsx` - Footer
+- `app/components/mdx.tsx` - MDX component overrides
+
+## 🚀 Deployment
+
+This blog is configured to deploy on Cloudflare Pages:
+
+### Build Commands
+
+- **Build**: `pnpm build`
+- **Output Directory**: `.vercel/output/static`
+
+### Environment Variables
+
+No environment variables are required for basic functionality.
+
+## 👤 Author
+
+**Aakash Patel**
+
+- Website: [aakashpatel.in](https://aakashpatel.in)
+- Email: aakashpatel25274@gmail.com
+- GitHub: [@itsaakashpatel](https://github.com/itsaakashpatel)
+
+Made with ❤️ by [Aakash Patel](https://aakashpatel.in)
