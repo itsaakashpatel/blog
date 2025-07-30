@@ -113,14 +113,14 @@ export default function RootLayout({
       className={cx(GeistSans.variable, GeistMono.variable)}
       suppressHydrationWarning={true}
     >
-      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto text-black">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto text-black min-h-screen flex flex-col">
+        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0 flex-grow">
           <Navbar />
-          {children}
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
+          <div className="flex-grow">{children}</div>
         </main>
+        <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
