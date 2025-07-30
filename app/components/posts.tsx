@@ -35,11 +35,7 @@ export function BlogPosts({
   return (
     <div>
       {displayedPosts.map((post, index) => (
-        <Link
-          key={post.slug}
-          className="block mb-8"
-          href={`/blog/${post.slug}`}
-        >
+        <Link key={post.slug} className="block mb-8" href={`/${post.slug}`}>
           <div className="flex flex-col space-y-2">
             <div className="flex items-start">
               <span className="text-base font-normal text-neutral-600 mr-2 flex-shrink-0 mt-0.5">
