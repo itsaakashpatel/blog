@@ -41,7 +41,7 @@ export function BlogPosts({
               <span className="text-base font-normal text-neutral-600 mr-2 flex-shrink-0 mt-0.5">
                 {String(index + 1).padStart(2, '0')}.
               </span>
-              <h2 className="text-xl font-semibold text-neutral-900 leading-tight tracking-tight">
+              <h2 className="text-xl font-semibold text-neutral-900 leading-tight tracking-tight post-title">
                 {post.metadata.title}
               </h2>
             </div>

@@ -1,5 +1,7 @@
 import { CustomMDX } from 'app/components/mdx';
 import { baseUrl } from 'app/sitemap';
+import { getPageContent } from 'app/lib/pages';
+import { notFound } from 'next/navigation';
 
 export const metadata = {
   title: 'Projects - Portfolio by Aakash Patel',
@@ -33,15 +35,19 @@ export const metadata = {
   },
 };
 
-const projectsContent = `
-Coming soon!
-`;
-
 export default function ProjectsPage() {
+  const pageData = getPageContent('projects');
+
+  if (!pageData) {
+    notFound();
+  }
+
   return (
-    <section>
+    <section className="py-2">
       <h1 className="font-semibold text-2xl mb-8 tracking-tighter">Projects</h1>
-      <CustomMDX source={projectsContent} />
+      <div className="space-y-6">
+        <CustomMDX source={pageData.content} />
+      </div>
     </section>
   );
 }
