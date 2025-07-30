@@ -1,6 +1,6 @@
 ---
 title: How to Stop useEffect From Running on The First Render?
-publishedAt: 2025-05-27
+publishedAt: 2025-05-27T00:00:00.000Z
 summary: Learn how to skip the first render of the useEffect hook in React using a custom hook or useRef to manage the initial render state.
 category: react-js
 ---
@@ -13,7 +13,7 @@ In certain situations, you want to skip the first render of the `useEffect` ho
 
 ## How do we use useEffect?
 
-**Actually, In React, the** [`useEffect` **hook**](https://react.dev/reference/react/useEffect) **runs after every render cycle of the component.**
+**Actually, In React, the [useEffect hook](https://react.dev/reference/react/useEffect) runs after every render cycle of the component.**
 
 Not aware of that?? So here’s the catch. For example.
 
@@ -89,7 +89,7 @@ Here, I have defined one function `useSkipFirstRender` with two params `callb
 
 Now, our main example can be rewritten in this way.
 
-```js
+```jsx
 useSkipFirstRender(() => {
   getSearchTextData(searchText);
 }, [searchText]);

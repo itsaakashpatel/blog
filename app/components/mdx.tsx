@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { highlight } from 'sugar-high';
 import React from 'react';
+import { baseUrl } from 'app/sitemap';
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => (
@@ -41,7 +42,15 @@ function CustomLink(props) {
     return <a {...props} />;
   }
 
-  return <a target="_blank" rel="noopener noreferrer" {...props} />;
+  // Check if the link is internal (contains our base URL)
+  const isInternalLink = href.includes(baseUrl);
+
+  if (isInternalLink) {
+    return <a target="_blank" rel="noopener noreferrer" {...props} />;
+  }
+
+  // External link - add nofollow
+  return <a target="_blank" rel="noopener noreferrer nofollow" {...props} />;
 }
 
 function RoundedImage(props) {
@@ -101,9 +110,11 @@ let components = {
 
 export function CustomMDX(props) {
   return (
-    <MDXRemote
-      {...props}
-      components={{ ...components, ...(props.components || {}) }}
-    />
+    <div className="prose prose-neutral max-w-none">
+      <MDXRemote
+        {...props}
+        components={{ ...components, ...(props.components || {}) }}
+      />
+    </div>
   );
 }

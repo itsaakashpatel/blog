@@ -29,13 +29,13 @@ A modern, fast, and SEO-optimized personal blog built with Next.js 15, TypeScrip
 
 ```
 ├── app/
+│   ├── [slug]/
+│   │   └── page.tsx         # Individual blog post pages (root level)
 │   ├── blog/
 │   │   ├── posts/
 │   │   │   ├── 2023/        # Posts organized by year
 │   │   │   ├── 2024/
 │   │   │   └── 2025/
-│   │   ├── [slug]/
-│   │   │   └── page.tsx     # Individual blog post page
 │   │   ├── page.tsx         # Blog listing page
 │   │   └── utils.ts         # Blog utilities
 │   ├── components/

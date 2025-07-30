@@ -36,7 +36,11 @@ html {
 }
 
 .prose a {
-  @apply underline transition-all decoration-neutral-400 underline-offset-2 decoration-[0.1em];
+  @apply underline transition-all decoration-blue-600 underline-offset-2 decoration-[0.1em] text-blue-600;
+}
+
+.prose a:hover {
+  @apply text-blue-700 decoration-blue-700 decoration-2;
 }
 
 .prose .anchor:after {
@@ -72,23 +76,23 @@ html {
 }
 
 .prose p {
-  @apply my-4 text-neutral-800;
+  @apply my-6 text-neutral-800 leading-relaxed;
 }
 
 .prose h1 {
-  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-4xl font-medium tracking-tight mt-8 mb-4;
 }
 
 .prose h2 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-xl font-medium tracking-tight mt-8 mb-4;
 }
 
 .prose h3 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-xl font-medium tracking-tight mt-6 mb-3;
 }
 
 .prose h4 {
-  @apply text-lg font-medium tracking-tight mt-6 mb-2;
+  @apply text-lg font-medium tracking-tight mt-6 mb-3;
 }
 
 .prose strong {
@@ -96,11 +100,23 @@ html {
 }
 
 .prose ul {
-  @apply list-disc pl-6;
+  @apply list-disc pl-6 my-6 space-y-2;
 }
 
 .prose ol {
-  @apply list-decimal pl-6;
+  @apply list-decimal pl-6 my-6 space-y-2;
+}
+
+.prose li {
+  @apply leading-relaxed;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-neutral-300 pl-4 my-6 italic text-neutral-600;
+}
+
+.prose hr {
+  @apply my-8 border-neutral-200;
 }
 
 .prose > :first-child {
@@ -135,4 +151,13 @@ table {
 
 .title {
   text-wrap: balance;
+}
+
+/* Post title hover effect - blue color without underline */
+.post-title {
+  @apply transition-colors duration-200;
+}
+
+a:hover .post-title {
+  @apply text-blue-600;
 }
