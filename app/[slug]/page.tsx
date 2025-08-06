@@ -32,6 +32,9 @@ export async function generateMetadata(props) {
   return {
     title,
     description,
+    alternates: {
+      canonical: `${baseUrl}/${post.slug}`,
+    },
     openGraph: {
       title,
       description,
